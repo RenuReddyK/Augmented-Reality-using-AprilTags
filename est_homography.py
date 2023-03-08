@@ -3,8 +3,6 @@ import numpy as np
 def est_homography(X, Y):
     """
     Calculates the homography H of two planes such that Y ~ H*X
-    If you want to use this function for hw5, you need to figure out
-    what X and Y should be.
     Input:
         X: 4x2 matrix of (x,y) coordinates
         Y: 4x2 matrix of (x,y) coordinates
@@ -12,8 +10,6 @@ def est_homography(X, Y):
         H: 3x3 homogeneours transformation matrix s.t. Y ~ H*X
 
     """
-
-    ##### STUDENT CODE START #####
     # X = np.array(X)
     # Y = np.array(Y)
     # print(X.shape)
@@ -32,6 +28,5 @@ def est_homography(X, Y):
     [U, S, Vt] = np.linalg.svd(A)
     h = np.transpose(Vt)[:,-1]
     H = h.reshape(3,3)
-    ##### STUDENT CODE END #####
 
     return H
